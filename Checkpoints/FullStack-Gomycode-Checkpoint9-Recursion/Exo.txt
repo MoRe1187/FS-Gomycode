@@ -1,0 +1,48 @@
+Function Palindrome(s:String[1...100],b:Integer):Boolean;
+
+Var
+
+  P:Boolean;
+
+Begin
+
+  If b=s.length-1-i or b>n-1-b Then :
+     /*b=s.length-1-b is like in 'kayak' b is at the middle (y)
+       same as s.length-1-b.
+       b>s.length-1-b is like in 'anna' b is at the second n while
+       s.length-1-b is at the first.
+       This also covers the case where s is an empty string
+       (b=0>-1=0-1-0=s.length-1-b), or where it's a single letter
+       (b=0=1-1-0=s.length-1-b*/
+     P:=True;
+     Return P;
+     Else :
+        If s[b]=s[n-1-b] Then :
+           P:=Is_Palindrome(s,b+1);
+           Return P;
+           Else :
+              P:=False;
+              Return P;
+        End_If
+  End_If
+
+End
+
+Algorithm Is_Palindrome
+
+Var
+
+  s:String[1...100];
+  b:Integer;
+
+Begin
+
+  Read(s);
+
+  b:=0; /*Must start with 0 (first letter of s)*/
+
+  Write("The fact that",s,"is palindrome is",Palindrome(s,b));
+
+End
+        
+
