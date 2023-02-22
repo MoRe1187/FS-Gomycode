@@ -1,0 +1,26 @@
+Algorithme Insertion Sort
+
+Var
+ 
+   A:Table_de_réels;
+   i,j:Entier;
+   t:Réel;
+
+Début
+
+   Lire(A);
+   
+   Pour i de 1 à A.length-1 Faire :
+        j:=i-1;
+        Tant que j>=0 Faire :
+                Si A[j+1]<A[j] Alors :
+                   t:=A[j+1];
+                   A[j+1]:=A[j];
+                   A[j]:=t;
+                   j:=j-1;
+                   Sinon : Break;
+                Fsi
+        Fait
+   Fait
+
+Fin
